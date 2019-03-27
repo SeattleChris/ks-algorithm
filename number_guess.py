@@ -1,5 +1,4 @@
 #!/usr/bin/python3
-import sys
 
 
 def guess_num(low, high, chances):
@@ -11,10 +10,10 @@ def guess_num(low, high, chances):
     """
     for count in range(0, chances):
         # compute guess
-        q = low + (high - low) / 2
+        q = low + (high - low) // 2
         # ask guess
         print(q)
-        response = sys.stdin.read()
+        response = input()
         # parse answer
         if response == 'TOO_SMALL':
             low = q + 1
@@ -27,10 +26,12 @@ def guess_num(low, high, chances):
     return False
 
 
-t = sys.stdin.read()
-for count in range(0, t):
-    a, b = sys.stdin.read().split()
-    n = sys.stdin.read()
+t = input()
+for count in range(0, int(t)):
+    a, b = input().split()
+    n = input()
     solved = guess_num(int(a), int(b), int(n))
     if solved is False:
         break
+
+# end of number_guess.py
