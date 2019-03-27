@@ -1,6 +1,6 @@
 #!/usr/bin/python3
 import sys
-# import time
+import time
 
 
 def test_digits(num):
@@ -27,10 +27,10 @@ def supervin_calc(t, *args):
 if __name__ == '__main__':
     args = []
     filename, t, *args = sys.argv
-    # start = time.time()
+    start = time.time()
     supervin_calc(t, *args)
-    # durr = time.time() - start
-    # if durr > int(t) * 20 * 1000:
-    #     print('Fail: ', durr)
-    # else:
-    #     print('Succcess!', durr)
+    durr = time.time() - start
+    if durr > int(t) * 20 * 1000:
+        print('Fail: ', durr)
+    else:
+        print('Succcess!', durr)
